@@ -4,7 +4,7 @@ import os
 import csv
 csv_columns = ['text']
 
-with open('top100_repository.txt', 'r') as f:
+with open('terraformrepo.txt', 'r') as f:
     lines = f.readlines()
 
 for line in lines:
@@ -17,7 +17,7 @@ count = 0
 for line in lines:
     for currentpath, folders, files in os.walk(f'resources/{line.strip().split("/")[-1]}'):
         for file in files:
-            if file[-3:] == '.py':
+            if file[-3:] == '.tf':
                 count += 1
                 total_files.append(os.path.join(currentpath, file))
 
